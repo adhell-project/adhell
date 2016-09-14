@@ -1,18 +1,19 @@
 #!/bin/bash
 
-##################################
-## Script-Name: 	macht-sinn	##
-## Type:			Script		##
-## Creator:			Crosser		##
-## License:	        GPLv3		##
-##################################
+##################################################
+## Script-Name: 	adhell                      ##
+## Type:			Script		                ##
+## Creator:			adhell-project	            ##
+## License:	        GPLv3		                ##
+## Website:         github.com/adhell-project   ##
+##################################################
 
 #####################
 ## ~~ Variables ~~ ##
 #####################
 
 # Define, check an load config file
-CONF='/etc/machtsinn/machtsinn.conf'
+CONF='/etc/adhell/adhell.conf'
 
 if [ -r "$CONF" ]; then
 	. $CONF
@@ -22,8 +23,8 @@ else
 	exit 11
 fi
 
-# Set macht-sinn's version
-SCRIPTVERSION='0.1.2.2'
+# Set adhell's version
+SCRIPTVERSION='0.0.1'
 
 # Insert first given argument into a variable
 ARG="$1"
@@ -34,10 +35,10 @@ TMPAD="$TMPDIR/hosts_ad.tmp"
 TMPORIG="$TMPDIR/hosts_orig.tmp"
 
 # Set whitelist location
-WHITELIST='/etc/machtsinn/whitelist.conf'
+WHITELIST='/etc/adhell/whitelist.conf'
 
 # Set lock-File location
-LCKFILE="/var/lock/machtsinn.lck"
+LCKFILE="/var/lock/adhell.lck"
 
 #####################
 ## ~~ Functions ~~ ##
@@ -52,7 +53,7 @@ printerr_error() {
 }
 
 printerr_root() {
-    echo "[$(date +%F,%T)] ERROR: macht-sinn needs root-privileges to work correctly." | tee -a $LOGFILE
+    echo "[$(date +%F,%T)] ERROR: adhell needs root-privileges to work correctly." | tee -a $LOGFILE
 }
 
 printerr_lock() {
@@ -194,12 +195,12 @@ remove_adhosts() {
 showhelp() {
 	echo 'This script generates a Blacklist for ad- and malwareblocking.'
 	echo 'Since this script needs write-access to $ADNAME, root-privileges are likely necessary.'
-	echo 'Usage: machtsinn.sh {option}'
+	echo 'Usage: adhell.sh {option}'
 	echo '  -g || --generate    Start to generate the Blacklist in $ADNAME'
     echo '  -r || --remove      Remove all blocked hosts in $ADNAME'
     echo '  -c || --clean       Manually start cleaning after the script aborted. Use at your own Risk!'
 	echo '  -v || --version     Print the version'
-	echo '  -h || --help        Print this message'
+	echo '  -h || --help        Print the help prompt'
 }
 
 # Show the error prompt
@@ -209,8 +210,8 @@ showerror() {
 
 # Show the version prompt
 showversion() {
-	echo "macht-sinn version $SCRIPTVERSION, ergibt das Sinn?"' ¯\_(ツ)_/¯'
-	echo 'A true open-source ad-blocking alternative for browser-plugins and other misterious stuff.'
+	echo "adhell version $SCRIPTVERSION, does that makes any sense?"' ¯\_(ツ)_/¯'
+	echo 'A free and open-source ad-blocking alternative for browser-plugins and other misterious stuff.'
 }
 
 # Show previous and current amount of blocked domains
