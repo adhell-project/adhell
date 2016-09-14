@@ -1,20 +1,21 @@
-##################################
-## Script-Name:     macht-sinn  ##
-## Type:            Script      ##
-## Creator:         Crosser     ##
-## License:         GPLv3       ##
-##################################
+##################################################
+## Script-Name:     adhell                      ##
+## Type:            Script                      ##
+## Creator:         adhell-project              ##
+## License:         GPLv3                       ##
+## Website:         github.com/adhell-project   ##
+##################################################
 
-!! Please do read machtsinn.conf carefully before editing or using this script !!
+!! Please do read adhell.conf carefully before editing or using this script !!
 
 ###
 ## Whitelist usage
 ###
 
-In /etc/machtsinn/whitelist.conf you can specifie one domain per line, which should never get blocked.
+In /etc/adhell/whitelist.conf you can specifie one domain per line, which should never get blocked.
 Please use this feature with care and do run some tests before putting it in a productive environment.
 
-## Example entry in /etc/machtsinn/whitelist.conf
+## Example entry in /etc/adhell/whitelist.conf
 
 duckduckgo.com
 
