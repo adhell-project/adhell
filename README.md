@@ -57,7 +57,7 @@ Since this script needs write-access to the hostfile defined in $ADNAME, it will
 - [x] Implement whitelisting (read /etc/adhell/README.txt for further information)
 - [ ] Perform a pre-running check
 
-Send me your suggestions for new features!
+Send us your suggestions for new features!
 
 ## Credits
 
